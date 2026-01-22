@@ -16,8 +16,8 @@ const prisma = new PrismaClient({
   adapter,
 });
 
-const ACCOUNT_ID = "a2d32842-4eeb-49d0-9a03-c502465a6ea7";
-const USER_ID = "f342228c-739f-46a6-b084-471a368e8437";
+const ACCOUNT_ID = "e896a546-8acd-4c89-aba5-3df1602b8537";
+const USER_ID = "817cb5dd-ad5b-4225-b10c-34ca8c4bf180";
 
 const CATEGORIES = {
   INCOME: [
