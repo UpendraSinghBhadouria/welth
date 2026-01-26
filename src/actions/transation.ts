@@ -13,7 +13,7 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY as string);
 
 export const createTransaction = async (
-  data: z.infer<typeof transactionSchema>
+  data: z.infer<typeof transactionSchema>,
 ) => {
   try {
     const user = await checkUser();
@@ -73,6 +73,7 @@ export const createTransaction = async (
             data.isRecurring && data.recurringInterval
               ? calculateNextRecurringDate(data.date, data.recurringInterval)
               : null,
+          lastProcessed: data.isRecurring ? data.date : null,
         },
       });
 
@@ -192,7 +193,7 @@ export const getTransaction = async (id: string) => {
 
 export async function updateTransaction(
   id: string,
-  data: z.infer<typeof transactionSchema>
+  data: z.infer<typeof transactionSchema>,
 ) {
   try {
     const user = await checkUser();
@@ -236,6 +237,7 @@ export async function updateTransaction(
             data.isRecurring && data.recurringInterval
               ? calculateNextRecurringDate(data.date, data.recurringInterval)
               : null,
+          lastProcessed: data.isRecurring ? data.date : null,
         },
       });
 
