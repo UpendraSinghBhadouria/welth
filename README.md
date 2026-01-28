@@ -1,36 +1,115 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+# Welth - AI Finance Platform
 
-First, run the development server:
+Welth is an AI-driven personal finance platform that helps users track, analyze, and optimize their money in one smart dashboard. It transforms raw financial data into clear, actionable insights so users can make better financial decisions every day.
+
+By combining real-time tracking with intelligent analysis, Welth gives users a complete view of their financial life — from daily spending to long-term financial goals.
+
+🌍 Live Website: https://welth.upendradev.com
+
+##  ✨ Features
+
+- Track income, expenses, and financial accounts
+- AI-powered spending insights using Gemini
+- Smart budgeting and savings recommendations
+- Interactive charts and financial breakdowns
+- Secure authentication with Clerk
+- Real-time modern UI built with Next.js
+- Transactional emails powered by Resend
+- Background workflows and automation with Inngest
+
+## 🛠️ Tech Stack
+
+| Layer               | Technology                   |
+| ------------------- | ---------------------------- |
+| **Frontend**        | Next JS + TypeScript         |
+| **UI Components**   | Shadcn UI + Tailwind CSS     |
+| **Authentication**  | Clerk                        |
+| **Security**        | ArcJet (Rate Limiting & Bot Protection)                        |
+| **Database**        | Neon (Serverless PostgreSQL) |
+| **ORM**             | Prisma                       |
+| **Charts**          | Recharts                     |
+| **AI Integration**  | Google Gemini API            |
+| **Emails**          | Resend + React Email         |
+| **Background Jobs** | Inngest                      |
+
+
+
+## 📦 Installation
+
+1️⃣ Clone the repository
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git Clone https://github.com/UpendraSinghBhadouria/welth.git
+cd welth
+```
+2️⃣ Install dependencies
+
+```bash
+npm install
+```
+3️⃣ Setup environment variables
+
+```bash
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=
+CLERK_SECRET_KEY=
+NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in
+NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up
+
+DATABASE_URL=''
+
+RESEND_API_KEY=
+RESEND_FROM_EMAIL=
+
+ARCJET_KEY=
+GEMINI_API_KEY=
+
+NEXT_PUBLIC_BASE_URL_DEV=http://localhost:3000
+NEXT_PUBLIC_BASE_URL_PROD=
+```
+4️⃣ Prisma setup
+```bash
+npx prisma generate
+npx prisma migrate dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+🚀 Running the App
+```bash
+npm run dev
+```
+🧩 Available Scripts
+```bash
+"scripts": {
+  "dev": "next dev",
+  "email:dev": "email dev",
+  "build": "next build",
+  "start": "next start",
+  "lint": "eslint",
+  "postinstall": "prisma generate"
+}
+```
+## 🔒 Authentication & Security
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Welth uses Clerk for secure user authentication and session management.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+To protect APIs and prevent abuse, Arcjet provides:
 
-## Learn More
+`🚦 Rate limiting`
 
-To learn more about Next.js, take a look at the following resources:
+`🤖 Bot detection and blocking`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+`🛡️ Automated abuse protection`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🔄 Background Processing
 
-## Deploy on Vercel
+Inngest powers event-driven jobs such as:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Recurring financial analysis
+- AI insight generation
+- Automated workflows
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## 🌟 Vision
+
+Welth is built to make financial intelligence accessible to everyone. Instead of just tracking money, users gain AI-driven clarity and guidance to actively improve their financial future.
+
