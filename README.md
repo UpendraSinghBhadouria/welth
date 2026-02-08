@@ -7,6 +7,8 @@ By combining real-time tracking with intelligent analysis, Welth gives users a c
 
 🌍 Live Website: https://welth.upendradev.com
 
+<img width="1470" alt="Screenshot 2024-12-10 at 9 45 45 AM" src="screenshots\welth.jpeg">
+
 ##  ✨ Features
 
 - Track income, expenses, and financial accounts
