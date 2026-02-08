@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import { Toaster } from "sonner";
 import { ClerkProvider } from "@clerk/nextjs";
 import { baseUrl } from "@/helper";
+import { ScrollToTop } from "@/components/ScrollToTop";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -78,7 +79,10 @@ export default function RootLayout({
         </head>
         <body className={`${inter.className} min-h-screen flex flex-col`}>
           <Header />
-          <main className="flex-1 min-h-screen">{children}</main>
+          <main className="flex-1 min-h-screen">
+            <ScrollToTop />
+            {children}
+          </main>
           <Toaster richColors />
           <Footer />
         </body>
